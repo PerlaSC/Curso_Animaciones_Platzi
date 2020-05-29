@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transformación rotación</title>
+    <style>
+        body {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            height: 100vh;
+            color: white;
+            font-family: "Arial";
+        }
+        
+        .container {
+            border: 1px solid red;
+            width: 100%;
+        }
+        
+        .container:hover .cuadrado {
+            animation-play-state: paused;
+        }
+        
+        .cuadrado {
+            width: 200px;
+            height: 200px;
+            background: #7dc900;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+            /* transition: 0.3s; */
+            /* animation-name: cuadrado, rebote;
+            animation-duration: 3s, 0.3s; */
+            /* animation-delay: 1s; */
+            animation-iteration-count: infinite, 20;
+            /* animation-timing-function: cubic-bezier(0.75, -0.31, 0.33, 1.4); */
+            /* animation-direction: reverse; */
+            animation-direction: alternate;
+            /* animation-fill-mode: forwards; */
+            animation-timing-function: linear, ease-in-out;
+            position: relative;
+            transition: 3s;
+            will-change: opacity, transform;
+        }
+        
+        .cuadrado:hover {
+            opacity: 0;
+            transform: scale(1.1);
+        }
+        
+        @keyframes cuadrado {
+            0% {
+                left: 0;
+            }
+            100% {
+                left: calc(100% - 240px);
+            }
+        }
+        
+        @keyframes escalera {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(500px);
+            }
+        }
+        
+        @keyframes rebote {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(100px) scale(1, 0.8);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="cuadrado" id="cuadrado">Hola mundo!</div>
+    </div>
+    <script>
+        const $cuadrado = document.getElementById("cuadrado");
+        $cuadrado.addEventListener("animationedn", (event) => {
+            // console.log(event.animationName);
+            if (event.animationName === "rebote") {
+                $cuadrado.style.animationName = "cuadrado escalera";
+                $cuadrado.style.animationDuration = "3s";
+            }
+        });
+    </script>
+</body>
+
+</html>
