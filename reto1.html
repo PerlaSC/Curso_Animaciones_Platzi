@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>primer reto</title>
+    <style>
+        .circulo {
+            background-color: black;
+            font-family: "Arial";
+            display: flex;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            color: white;
+            animation-name: circulo;
+            animation-duration: 1s;
+            justify-content: center;
+            align-items: center;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            margin: auto;
+        }
+        
+        @keyframes circulo {
+            from {
+                width: 200px;
+                font-size: 20px;
+                font-weight: normal;
+            }
+            to {
+                width: 240px;
+                font-size: 35px;
+                font-weight: 700;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="circulo">
+        Hola
+    </div>
+</body>
+
+</html>
