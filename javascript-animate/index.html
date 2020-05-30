@@ -50,10 +50,10 @@
     <div class="container">
         <div class="pelota" id="pelota"></div>
         <div class="buttons">
-            <button class="btn" id="paly">Play</button>
+            <button class="btn" id="play">Play</button>
             <button class="btn" id="pause">Pause</button>
             <button class="btn" id="stop">Stop</button>
-            <button class="btn" id="reversa">Reverse</button>
+            <button class="btn" id="reverse">Reverse</button>
         </div>
     </div>
     <script>
@@ -73,6 +73,22 @@
                 iterationStart: 0.5,
             }
         );
+        const $playButton = document.getElementById("play");
+        const $pauseButton = document.getElementById("pause");
+        const $stopButton = document.getElementById("stop");
+        const $reverseButton = document.getElementById("reverse");
+        $playButton.addEventListener("click", (event) => {
+            animation.play();
+        });
+        $pauseButton.addEventListener("click", (event) => {
+            animation.pause();
+        });
+        $stopButton.addEventListener("click", (event) => {
+            animation.cancel();
+        });
+        $reverseButton.addEventListener("click", (event) => {
+            animation.reverse();
+        });
     </script>
 </body>
 
