@@ -30,6 +30,12 @@
 <body>
     <div class="container">
         <div class="pelota" id="pelota"></div>
+        <div class="buttons">
+            <button id="paly"></button>
+            <button id="pause"></button>
+            <div id="stop"></div>
+            <div id="reversa"></div>
+        </div>
     </div>
     <script>
         const $pelota = document.getElementById("pelota");
@@ -43,7 +49,7 @@
                 direction: "normal",
                 delay: 1000,
                 easing: "linear",
-                interations: Infinity,
+                iterations: Infinity,
                 fill: "forwards",
                 iterationStart: 0.5,
             }
