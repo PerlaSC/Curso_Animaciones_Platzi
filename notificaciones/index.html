@@ -39,7 +39,6 @@
         }
         
         .notification:after {
-            content: "1";
             font-size: 11px;
             font-weight: bold;
             display: flex;
@@ -53,6 +52,16 @@
             position: absolute;
             top: 5px;
             right: 5px;
+            content: attr(data-count);
+            opacity: 0;
+            transition: 0.3s;
+            transform: scale(0.5);
+            will-change: opacity, transform;
+        }
+        
+        .notification.show-count:after {
+            opacity: 1;
+            transform: scale(1);
         }
         
         .btn {
@@ -78,9 +87,19 @@
 
 <body>
     <header>
-        <button class="btn primary">Enviar notificación</button>
-        <div class="notification"></div>
+        <button class="btn primary" id="button">Enviar notificación</button>
+        <div class="notification" id="notification"></div>
     </header>
+    <script>
+        const $button = document.getElementById("button");
+        const $bell = document.getElementById("notification");
+
+        $button.addEventListener("click", (event) => {
+            const count = Number($bell.getAttribute("data-count"));
+            $bell.setAttribute("data-count", count + 1);
+            $bell.classList.add("show-count");
+        });
+    </script>
 </body>
 
 </html>
