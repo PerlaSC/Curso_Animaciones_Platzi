@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Norifications</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        body {
+            background-image: url("platzi.png");
+            background-size: 100%;
+            height: 200vh;
+            margin: 0;
+        }
+        
+        .notification {
+            color: red;
+        }
+        
+        .notification:before {
+            content: "\f0f3";
+            font-family: "FontAwesome";
+            display: block;
+        }
+        
+        .btn {
+            text-align: center;
+            background: #7dc800;
+            border: none;
+            padding: 0.6em 0.8em 0.8em;
+            color: white;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: inset 0 -0.2em rgba(0, 0, 0, 0.2);
+            outline: 0;
+            transition: 0.2s;
+            will-change: transform;
+        }
+        
+        .btn:active {
+            transform: scale(0.9);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <button class="btn primary">Enviar notificación</button>
+        <div class="notification"></div>
+    </header>
+</body>
+
+</html>
