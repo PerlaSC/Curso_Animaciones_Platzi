@@ -36,6 +36,40 @@
             content: "\f0f3";
             font-family: "FontAwesome";
             display: block;
+            transform-origin: center top;
+        }
+        
+        .notification.notify:before {
+            animation-name: bell;
+            animation-duration: 1s;
+            animation-timing-function: ease-out;
+        }
+        
+        @keyframes bell {
+            0% {
+                transform: rotate(35deg);
+            }
+            12.5% {
+                transform: rotate(-30deg);
+            }
+            25% {
+                transform: rotate(25deg);
+            }
+            37.5% {
+                transform: rotate(-20deg);
+            }
+            50% {
+                transform: rotate(15deg);
+            }
+            62.5% {
+                transform: rotate(-10deg);
+            }
+            75% {
+                transform: rotate(5deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
         }
         
         .notification:after {
@@ -98,6 +132,10 @@
             const count = Number($bell.getAttribute("data-count"));
             $bell.setAttribute("data-count", count + 1);
             $bell.classList.add("show-count");
+            $bell.classList.add("notify");
+        });
+        $bell.addEventListener("animationend", () => {
+            $bell.classList.remove("notify");
         });
     </script>
 </body>
