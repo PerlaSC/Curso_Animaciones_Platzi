@@ -10,33 +10,68 @@
             margin: 0;
         }
         
-        .circulo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background: rgba(0, 0, 0, 0.5);
-            position: absolute;
-            animation: 5s wave infinite alternate;
-        }
-        
-        .circulo.b {
-            animation-delay: 1s;
-        }
-        
-        .circulo.c {
-            animation-delay: 2s;
-        }
-        
         .container {
+            height: 500px;
+            background: #0f9bf6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
             position: relative;
+        }
+        
+        .waves {
+            position: absolute;
+            bottom: -135px;
+            height: 527px;
+            width: 100%;
+            /* left: 0;
+            right: 0;
+            height: 200px;
+            bottom: 0; */
+        }
+        
+        .content {
+            font-family: Arial;
+            font-size: 2em;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .wave {
+            width: 2402px;
+            height: 427px;
+            left: -180px;
+            bottom: 0;
+            /* background: rgba(0, 0, 0, 0.3); */
+            position: absolute;
+            background: url(waves.png) center bottom no-repeat;
+            animation: 5s wave ease-in-out infinite alternate;
+        }
+        
+        .wave.a {
+            background-position: 0 -854px;
+        }
+        
+        .wave.b {
+            background-position: 0 -427px;
+            animation-delay: 0.6s;
+        }
+        
+        .wave.c {
+            background-position: 0 0;
+            animation-delay: 1.2s;
         }
         
         @keyframes wave {
             0% {
-                transform: translateX(0) translateY(0);
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(-80px, 30px);
             }
             100% {
-                transform: translateX(200px) translateY(100px);
+                transform: translate(160px, -60px);
             }
         }
     </style>
@@ -44,9 +79,15 @@
 
 <body>
     <div class="container">
-        <div class="circulo a"></div>
-        <div class="circulo b"></div>
-        <div class="circulo c"></div>
+        <div class="content">
+            <h1>Hola mundo</h1>
+            <p>Estoy en el curso de animaciones para la web!</p>
+        </div>
+        <div class="waves">
+            <div class="wave circulo a"></div>
+            <div class="wave circulo b"></div>
+            <div class="wave circulo c"></div>
+        </div>
     </div>
 </body>
 
