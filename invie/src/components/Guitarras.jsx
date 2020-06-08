@@ -20,7 +20,8 @@ class Guitarras extends Component {
               <CSSTransitionGroup transitionName="flicker" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
                 <img className="guitarra-image" key={guitarra.image} src={guitarra.image} alt={guitarra.alt} width="350" />
               </CSSTransitionGroup>
-              <div className="contenedor-guitarra">
+              <CSSTransitionGroup transitionName="fade" transitionEnterTimeout={300}transitionLeave={false}>
+              <div className="contenedor-guitarra" key={guitarra.name}>
                 <h3 className="guitarra-name">{guitarra.name} </h3>
                 <ol>
                   {guitarra.features.map((feature, index) => {
@@ -30,6 +31,7 @@ class Guitarras extends Component {
                   })}
                 </ol>
               </div>
+              </CSSTransitionGroup>
             </article>
 
           )

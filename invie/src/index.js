@@ -31,9 +31,9 @@ const initialState = {
     alt: 'Guitarra padre de familia',
     name: 'Invie Familiar',
     features: [
-      'Lista para copiar a los Simpsons',
-      'Aire puro',
-      'Chistes malos'
+      'Estilo Vintage',
+      'Madera pura',
+      'Incluye estuche invisible de aluminio'
     ]
   } ,
   {
@@ -70,9 +70,9 @@ const easter= {
       alt: 'Guitarra Invie Acustica',
       name: 'Invie Acústica',
       features: [
-        'Estilo Vintage',
-        'Madera pura',
-        'Incluye estuche invisible de aluminio'
+        'Lista para copiar a los Simpsons',
+        'Aire puro',
+        'Chistes malos'
       ]
     },
     {
