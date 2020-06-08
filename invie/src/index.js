@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom';
 import Invie from './App'
 import './css/invie.css';
 // import * as serviceWorker from './serviceWorker';
-
+import './css/animations.css'
 import cheet from 'cheet.js';
 import {Provider} from 'react-redux'
 import { createStore } from 'redux'
 import logoPortada from './images/invie.png';
 import acustica from './images/invie-acustica.png';
 import classic from './images/invie-classic.png';
+import easterA from './images/easter-a.png'
+import easterB from './images/easter-b.png'
 
 
 const initialState = {
@@ -26,12 +28,12 @@ const initialState = {
   logoPortada: logoPortada,
   guitarras: [{
     image: acustica,
-    alt: 'Guitarra Invie Acustica',
-    name: 'Invie Acústica',
+    alt: 'Guitarra padre de familia',
+    name: 'Invie Familiar',
     features: [
-      'Estilo Vintage',
-      'Madera pura',
-      'Incluye estuche invisible de aluminio'
+      'Lista para copiar a los Simpsons',
+      'Aire puro',
+      'Chistes malos'
     ]
   } ,
   {
@@ -61,7 +63,29 @@ const easter= {
   menu: [{
     href: 'index.html',
     title: 'Home',
-  }]
+  }],
+  guitarras:[
+    {
+      image: easterA,
+      alt: 'Guitarra Invie Acustica',
+      name: 'Invie Acústica',
+      features: [
+        'Estilo Vintage',
+        'Madera pura',
+        'Incluye estuche invisible de aluminio'
+      ]
+    },
+    {
+      image: easterB,
+      alt: 'Guitarra Invie Classic',
+      name: 'Invie Classic',
+      features: [
+        'Estilo Vintage',
+        'Liviana',
+        'empiezas tu canino como rockstar'
+      ]
+    }
+  ]
 }
 cheet('i n v i e', () => {
   store.dispatch({
@@ -70,7 +94,7 @@ cheet('i n v i e', () => {
       props: easter
     }
   })
-   alert('lo lograste, descubriste el misterio')
+   
 })
 cheet('g o b a c k', () => {
   store.dispatch({
