@@ -15,6 +15,7 @@ import easterB from './images/easter-b.png'
 
 
 const initialState = {
+  isAnimated: false,
   menu: [{
     href: 'index.html',
     title: 'Home',
@@ -60,6 +61,7 @@ function reducer(state, action) {
 }
 const store = createStore(reducer, initialState);
 const easter= {
+    isAnimated: 'isAnimated',
   menu: [{
     href: 'index.html',
     title: 'Home',
